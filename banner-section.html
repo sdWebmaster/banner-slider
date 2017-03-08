@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="banner-section">
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.theme.default.min.css" />
+    <script src="bower_components/owl.carousel/dist/owl.carousel.js"></script>
+
+    <template>
+        <style>
+            ::content > .owl-item img{ width: 100%; }
+        </style>
+        <div class="owl-carousel owl-theme" id="owlCarousel" hidden$="{{!show}}">
+            <content></content>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'banner-section',
+            properties: {
+                items: Number,
+                show: {
+                    type: Boolean,
+                    value: true
+                }
+            },
+            attached: function () {
+                options = {};
+                if(this.items > 0)
+                    options["items"] = this.items;
+
+                options["loop"] = true;
+                options["autoplay"] = true;
+
+                $(this.$.owlCarousel).owlCarousel(options);
+            }
+        });
+    </script>
+</dom-module>

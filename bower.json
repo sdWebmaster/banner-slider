@@ -1,0 +1,14 @@
+{
+  "name": "banner-slider",
+  "authors": [
+    "Ivan Chavez <ichavez@sonoradesign.mx>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "www.sonoradesign.mx",
+  "private": false,
+  "dependencies": {
+    "owl.carousel": "^2.1.6"
+  }
+}
